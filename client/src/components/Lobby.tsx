@@ -1,6 +1,7 @@
 // E3-04 lobby + E3-02 character selection (Ivalice: Ninth Shard roster).
 // Avatars are pure cosmetics — the server enforces one claim per character.
 import { CHARACTERS, avatarUrl } from "../characters";
+import { spawnBots } from "../bots";
 import { leaveRoom, sendAvatar, sendStart } from "../net";
 import { useStore } from "../store";
 
@@ -54,6 +55,11 @@ export function Lobby() {
         })}
       </div>
 
+      {isHost && lobby.players.length < 3 && (
+        <button onClick={() => void spawnBots(lobby.code, 3 - lobby.players.length)}>
+          🤖 simulate {3 - lobby.players.length} test player{3 - lobby.players.length > 1 ? "s" : ""} (auto-play)
+        </button>
+      )}
       {isHost ? (
         <button className="primary" disabled={lobby.players.length < 3} onClick={sendStart}>
           {lobby.players.length < 3 ? `need ${3 - lobby.players.length} more` : `Start (${lobby.players.length} players)`}
