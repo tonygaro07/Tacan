@@ -1,7 +1,7 @@
 // Real-world smoke: create by code, 3 players, start, first setup move.
 import { Client } from "colyseus.js";
 
-const url = "ws://127.0.0.1:2567";
+const url = process.argv[2] ?? "ws://127.0.0.1:2567";
 const ana = await new Client(url).create("tacan", { name: "Ana" });
 const code = ana.roomId;
 let anaState = null;
