@@ -137,7 +137,7 @@ Estimate: **S** < half day · **M** ~1 day · **L** 1–3 days
 - **E4-01** | ✅ DONE 2026-07-01 *(MVP renders in SVG — same server-state-driven interface; PixiJS/WebGL is the Epic 6 polish swap)* | L — PixiJS hex board renderer driven purely by server state.
 - **E4-02** | ✅ DONE 2026-07-01 | M — Click/hover interaction on vertices (settlements) and edges (roads).
 - **E4-03** | ✅ DONE 2026-07-01 | S — Robber token render + move.
-- **E4-04** | P1 | M — Final tile/number-token art pass.
+- **E4-04** | 🟨 PREPARED 2026-07-02 (InkShadow prompt pack + batch script in art/ and scripts/; run gen-art.mjs, then wire pattern fills) | M — Final tile/number-token art pass.
 - **E4-05** | P1 | M — Player piece rendering with equipped cosmetic skins.
 
 ### EPIC 5 — Gameplay UI
@@ -151,6 +151,7 @@ Estimate: **S** < half day · **M** ~1 day · **L** 1–3 days
 - **E5-08** | ✅ DONE 2026-07-01 | S — Steal-target picker modal (robber resolution).
 
 ### EPIC 6 — Animation & Polish (this is where "nice graphics" lives)
+- **E6-00 InkShadow theme** | ✅ DONE 2026-07-02 — neon-noir palette across UI + board (CSS/SVG only, no assets)
 - **E6-01** | P1 | M — Dice roll animation.
 - **E6-02** | P1 | M — "Flying resource" animation on production.
 - **E6-03** | P1 | S — Robber move + steal animation.
@@ -172,8 +173,8 @@ Estimate: **S** < half day · **M** ~1 day · **L** 1–3 days
 
 ### EPIC 9 — QA & Deployment
 - **E9-01** | P0 | M — Scripted 4-player end-to-end playtest (manual or automated).
-- **E9-02** | 🟨 PREPARED 2026-07-01 (netlify.toml committed; deploy after server is live) | S — Frontend deploy pipeline (Netlify/Vercel).
-- **E9-03** | 🟨 PREPARED 2026-07-01 (render.yaml committed; Render free tier chosen) | M — Backend deploy on a persistent-connection host (Fly.io/Railway).
+- **E9-02** | ✅ DONE 2026-07-02 (live at tacan.netlify.app) | S — Frontend deploy pipeline (Netlify/Vercel).
+- **E9-03** | ✅ DONE 2026-07-02 (live at tacan-server.onrender.com, Render free tier) | M — Backend deploy on a persistent-connection host (Fly.io/Railway).
 - **E9-04** | ✅ DONE 2026-07-01 *(env config done: VITE_SERVER_URL + PORT; secrets n/a yet)* | S — Environment config & secrets management.
 
 **Total: ~48 tickets across 10 epics.** — *Sessions 1–2 complete: E0-02, all of Epic 1, and Epic 2 (E2-01→E2-05) shipped — 69 passing tests (59 rules engine + 10 networking). Session 3+: full client shipped incl. E3-02 character select (Ivalice roster) (landing, lobby, SVG board, all gameplay UI, winners screen) — the game is PLAYABLE end to end on localhost. 79 tests green. Remaining for MVP: E9-02/03 deploys (need hosting accounts). Note: state sync uses per-player redacted JSON broadcasts instead of Colyseus schema — simpler, and it hides opponents' hands/dev cards and the RNG seed from clients by construction.*
