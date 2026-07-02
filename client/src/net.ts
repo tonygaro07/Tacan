@@ -15,6 +15,10 @@ export function setEndpoint(url: string): void {
   endpointOverride = url;
 }
 
+export function getEndpoint(): string {
+  return endpoint();
+}
+
 function endpoint(): string {
   if (endpointOverride) return endpointOverride;
   try {
