@@ -1,0 +1,14 @@
+# E9-03 — Render blueprint for the Tacan GAME SERVER (Colyseus websockets).
+# In Render: New -> Blueprint -> connect the tacan repo -> apply.
+# Free tier note: the service sleeps when idle; the first connection on game
+# night takes ~30-60s to wake it, then it stays up for the whole session.
+services:
+  - type: web
+    name: tacan-server
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npx tsx server/src/index.ts
+    envVars:
+      - key: NODE_VERSION
+        value: "22"

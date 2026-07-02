@@ -1,0 +1,19 @@
+# E9-02 — Netlify deploy config for the Tacan CLIENT (static build only).
+# The game server does NOT run here — it needs a persistent host (see README).
+#
+# One manual step in the Netlify UI after linking the repo:
+#   Site settings -> Environment variables -> add
+#     VITE_SERVER_URL = wss://<your-game-server-host>   (wss://, not ws://, in production)
+
+[build]
+  command = "npm run build --workspace=@tacan/client"
+  publish = "client/dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# SPA: every route serves the app shell
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

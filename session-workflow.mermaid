@@ -1,0 +1,18 @@
+flowchart TD
+    A[Before you go:<br/>create repo 'tacan' with<br/>/client /server /shared folders] --> B[At coworking space:<br/>open Fable 5]
+
+    B --> C[Paste E0-02<br/>monorepo scaffold ticket]
+    C --> D[Paste E1-01<br/>board generator]
+    D --> E[Ask Fable 5 to write + run<br/>a test proving E1-01's<br/>Acceptance Criteria pass]
+    E --> F{Test passes?}
+    F -- No --> D
+    F -- Yes --> G[Paste E1-02 → repeat<br/>test-verify loop]
+    G --> H[... continue through E1-10<br/>one ticket at a time]
+    H --> I{All E1-10 tests green?}
+    I -- Yes --> J[✅ Stop here for session 1<br/>Rules engine is correct & proven]
+    I -- No --> H
+
+    J --> K[Session 2: Epic 2<br/>Colyseus networking<br/>same one-ticket-at-a-time loop]
+
+    style J fill:#1a3a1a,stroke:#66ff66
+    style A fill:#1a1a3a,stroke:#6666ff

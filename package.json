@@ -1,0 +1,16 @@
+{
+  "name": "tacan",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Tacan \u2014 private multiplayer hex board game for the friend group",
+  "workspaces": [
+    "shared",
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "test": "npm run test --workspaces --if-present",
+    "dev:server": "npm run dev --workspace=@tacan/server",
+    "dev:client": "npm run dev --workspace=@tacan/client"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "@tacan/server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@colyseus/tools": "^0.15.0",
+    "@tacan/rules": "*",
+    "colyseus": "^0.15.17"
+  },
+  "devDependencies": {
+    "@colyseus/testing": "^0.15.0",
+    "tsx": "^4.16.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0"
+  },
+  "exports": {
+    "./app.config": "./src/app.config.ts",
+    "./view": "./src/view.ts"
+  }
+}
