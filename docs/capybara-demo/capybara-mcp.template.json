@@ -1,0 +1,13 @@
+{
+  "//": "TEMPLATE ONLY. Place at the project root as `.mcp.json` (or use `claude mcp add`).",
+  "//command": "Replace command/args/env with the EXACT values from your Capybara developer console (https://developer.capybara.build). The public package name is not documented here on purpose — do not guess it.",
+  "mcpServers": {
+    "capybara-mcp": {
+      "command": "REPLACE_WITH_CONSOLE_COMMAND",
+      "args": ["REPLACE_WITH_CONSOLE_ARGS"],
+      "env": {
+        "CAPYBARA_API_KEY": "REPLACE_WITH_YOUR_API_KEY"
+      }
+    }
+  }
+}
