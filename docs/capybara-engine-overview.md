@@ -108,6 +108,12 @@ if you reinstall. (On a different OS/arch, install the matching
 Once fixed, `npm run dev` serves cleanly — `index.html` and `dist/main.js` return
 HTTP 200, `dist/styles.css` builds, and the page mounts its `<canvas id="game">`.
 
+> **Verified end-to-end offline.** A hand-authored demo scene (grass map + a
+> WASD-driven walking character, no hosted assets) runs with working movement,
+> camera-follow, and hover labels. See [`capybara-demo/`](./capybara-demo/) for
+> the scene, a zero-dependency placeholder-art generator, a screenshot, and
+> reproduce steps.
+
 ### Expected console noise in a sandboxed/offline environment
 
 `index.html` pulls several **external** resources: Google Fonts, `capybara.build`
